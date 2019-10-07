@@ -15,17 +15,17 @@ x_position = random(0, width)
 y_position = random(0, height)
 angleMode(DEGREES)
 
-push()
-fill(255, 0 , 0)
-noStroke()
-rect(0, 0, width, height)
-pop()
 
 }
 
 function draw() {
 	// strokeWeight(5)
 	// // line(x_position, 0, x_position, height)
+
+
+fill(255, 0 , 0)
+noStroke()
+rect(0, 0, width, height)
 
 //background drawing
 fill(250, 0, 0)
@@ -51,53 +51,56 @@ stroke(0)
 strokeWeight(2)
 
 
-// push()
 	// translate(x_position, y_position)
 	fill(255)
 	noStroke()
 	rect(0, 0, x_position, height)
 	rect(x_position, 0, box, y_position)
 	rect(x_position + box, 0, width, height)
-	rect(x_position, y_position + box, x_position + box, y_position + box)
+	rect(x_position, y_position + box, box, height - (y_position + box))
 
 
-// pop()
 
-// 	if(x_direction == 'right') {
-// 		x_position = x_position + speed
-// 	}
+	if(x_direction == 'right') {
+		x_position = x_position + speed
+	}
 
-// 	if (x_direction == 'left') {
-// 		x_position = x_position - speed
-// 	}
+	if (x_direction == 'left') {
+		x_position = x_position - speed
+	}
 
-// 	if(y_direction == 'up') {
-// 		y_position = y_position - speed
-// 	}
+	if(y_direction == 'up') {
+		y_position = y_position - speed
+	}
 
-// 	if (y_direction == 'down') {
-// 		y_position = y_position + speed
-// 	}
-// //right wall
-// 	if (x_position >= width - diameter/2) {
-// 		x_direction = 'left'
-// 		fill(random(0, 255), random(0, 255), random(0, 255))
-// 	}
-// //left wall
-// 	if (x_position <= 0 + diameter/2) {
-// 		x_direction = 'right'
-// 		fill(random(0, 255), random(0, 255), random(0, 255))
-// 	}
-// //top wall
-// 	if (y_position <= 0 + diameter/2) {
-// 		y_direction = 'down'
-// 		fill(random(0, 255), random(0, 255), random(0, 255))
-// 	}
-// //bottom wall
-// 	if (y_position >= height - diameter/2) {
-// 		y_direction = 'up'
-// 		fill(random(0, 255), random(0, 255), random(0, 255))
-// 	}
+	if (y_direction == 'down') {
+		y_position = y_position + speed
+	}
+//right wall
+	if (x_position >= width - box) {
+		x_direction = 'left'
+		fill(random(0, 255), random(0, 255), random(0, 255))
+	}
+//left wall
+	if (x_position <= 0) {
+		x_direction = 'right'
+		fill(random(0, 255), random(0, 255), random(0, 255))
+	}
+//top wall
+	if (y_position <= 0) {
+		y_direction = 'down'
+		fill(random(0, 255), random(0, 255), random(0, 255))
+	}
+//bottom wall
+	if (y_position >= height - box) {
+		y_direction = 'up'
+		fill(random(0, 255), random(0, 255), random(0, 255))
+	}
+
+stroke(0)
+strokeWeight(2)
+noFill()
+rect(0, 0, width, height)
 
 
 
